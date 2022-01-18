@@ -3,7 +3,7 @@ node {
          checkout scm
      }
      stage('Build') {
-         app = docker.build("gofiddlersgreen/jenkins")
+         app = docker.build("gofiddlersgreen/flask-msa")
      }
      stage('Push') {
          docker.withRegistry('https://registry.hub.docker.com', 'docker_hub') {
