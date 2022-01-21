@@ -1,0 +1,142 @@
+ubuntu@yjh-master:~/homework$ ls
+details-service.yaml  details.yaml  frontpage-service.yaml  frontpage.yaml  ingress-class.yaml  ingress.yaml
+ubuntu@yjh-master:~/homework$ vi frontpage.yaml 
+ubuntu@yjh-master:~/homework$ vi frontpage.yaml 
+ubuntu@yjh-master:~/homework$ vi frontpage-service.yaml 
+ubuntu@yjh-master:~/homework$ vi frontpage-service.yaml 
+ubuntu@yjh-master:~/homework$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ubuntu@yjh-master:~/homework$ ls
+details-service.yaml  details.yaml  frontpage-service.yaml  frontpage.yaml  ingress-class.yaml  ingress.yaml
+ubuntu@yjh-master:~/homework$ vi ingress.yaml 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /details
+        pathType: Prefix
+        backend:
+          service:
+            name: details-svc
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontpage-svc
+            port:
+              number: 80
