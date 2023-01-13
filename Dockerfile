@@ -4,10 +4,10 @@ WORKDIR /
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
-COPY app.py /app/
+COPY frontend/app.py /app/
 COPY requirements.txt /app/
-COPY templates /app/templates
-COPY static /app/static
+COPY frontend/templates /app/templates
+COPY frontend/static /app/static
 
 EXPOSE 80
 WORKDIR /app
